@@ -1,0 +1,26 @@
+{
+  "MyDB": {
+    "DeletionPolicy": "Snapshot",
+    "Properties": {
+      "AllocatedStorage": "5",
+      "AutoMinorVersionUpgrade": "false",
+      "AvailabilityZone": "eu-west-2a",
+      "BackupRetentionPeriod": 0,
+      "DBInstanceClass": "db.t1.micro",
+      "DBInstanceIdentifier": "StorefrontApp",
+      "DBName": "sfapp",
+      "DBSecurityGroups": [
+        {
+          "Ref": "MyDbSecurityByEC2SecurityGroup"
+        },
+        {
+          "Ref": "MyDbSecurityByCIDRIPGroup"
+        }
+      ],
+      "Engine": "MySQL",
+      "MasterUserPassword": "MyPassword",
+      "MasterUsername": "MyName"
+    },
+    "Type": "AWS::RDS::DBInstance"
+  }
+}
